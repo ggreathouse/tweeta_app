@@ -32,6 +32,7 @@ module.exports = async (req, res) => {
         res.cookie('jwtToken', jwtToken, { maxAge: 900000, httpOnly: true });
 
         res.redirect('/')
+        console.log(data)
     } catch(e) {
         console.log(e)
         res.redirect('/auth/register')
