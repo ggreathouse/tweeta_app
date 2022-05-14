@@ -2,11 +2,6 @@ const mongoose = require('mongoose')
 
 const postSchema = new mongoose.Schema(
     {
-        slug: {
-            type: String,
-            unique: false,
-            required: true,
-        },
         text: {
             type: String,
             required: true

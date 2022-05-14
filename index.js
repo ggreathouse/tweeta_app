@@ -7,6 +7,7 @@ const schema = require('./src/graphql/schema')
 const { authenticate } = require('./src/middleware/auth')
 const cookieParser = require('cookie-parser')
 const { userData } = require('./src/middleware/userData')
+const { allPosts } = require('./src/middleware/allPosts')
 
 
 dotenv.config()
@@ -15,7 +16,7 @@ connectDB()
 app.use(cookieParser())
 app.use(authenticate)
 app.use(userData)
-
+app.use(allPosts)
 
 app.use('/graphql', graphqlHTTP({
     schema,
@@ -29,6 +30,11 @@ app.set('views', (path.join(__dirname, '/src/templates/views')))
 
 
 require('./src/routes')(app)
+
+app.listen(process.env.PORT, () =>{
+    console.log('app running')
+}) 
+
 
 
 // //Setting Routes

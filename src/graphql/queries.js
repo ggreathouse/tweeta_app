@@ -32,24 +32,12 @@ const post = {
 }
 const posts = {
     type: new GraphQLList(PostType),
-    description: 'Query all posts by a user',
-    args: {
-        userId: { type: GraphQLString }
-    },
+    description: 'Query all posts by all users',
     resolve(parent, args) {
-        return Post.findById(args.userId)
+        return Post.find()
     }
 }
 
-const postBySlug = {
-    type: PostType,
-    description: 'Query post by slug value',
-    args: {
-        slug: { type: GraphQLString }
-    },
-    async resolve(parent, args) {
-        return Post.findOne({slug: args.slug})
-    }
-}
 
-module.exports = {users, user, post, posts, postBySlug}
+
+module.exports = {users, user, post, posts}

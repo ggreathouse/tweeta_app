@@ -43,7 +43,7 @@ const userData = async ( req, res, next) =>{
     }
 
     req.verifiedUser.user.posts = data.data.data.user?.posts ?? []
-
+    console.log(req.verifiedUser.user.posts)
     next()
 }
 

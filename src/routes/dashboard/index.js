@@ -1,7 +1,8 @@
-const MainDashboardRouter = require("express").Router()
+MainDashboardRouter = require("express").Router()
 
 MainDashboardRouter.route("/")
     .get(require("./dashboard.view.js"))
+    
 
 
 
