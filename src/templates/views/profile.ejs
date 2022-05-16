@@ -1,4 +1,5 @@
 <%- include('../partials/header.ejs') %>
+<h1 class="card-header"><%= user.username %> Posts</h1>
 <% user.posts.forEach(post => { %>
     <div class="card" style="width: 36rem;">
         <div class="card-body">
