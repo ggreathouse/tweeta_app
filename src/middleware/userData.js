@@ -48,19 +48,3 @@ const userData = async ( req, res, next) =>{
 }
 
 module.exports = { userData }
-// const query = `
-//         query user($id: ID!) { 
-//             user( id: $id ) {
-//                 id,
-//                 posts {
-//                     id,
-//                     userId,
-//                     text,
-//                     createdDate,
-//                     user {
-//                         id,
-//                         username
-//                     }
-//                 }
-//             } 
-//         }

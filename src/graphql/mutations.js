@@ -1,5 +1,4 @@
-const { GraphQLString, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLInt } = require('graphql')
-const { QuestionInputType, AnswerInputType } = require('./types')
+const { GraphQLString} = require('graphql')
 const { User, Post } = require('../models')
 const { createJwtToken } = require('../util/auth')
 
